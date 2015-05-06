@@ -1,93 +1,72 @@
 ---
 layout: page
-title: 컴퓨터적 사고 함양을 위한 라즈베리 파이
-subtitle: NOOBS 운영체제 관리자
+title: 컴퓨터 네트워킹(Networking)
+subtitle: 사물 인터넷(Internet of Things, IoT): 컴퓨터가 다른 컴퓨터를 제어하는 방법
 minutes: 10
 ---
 > ## 학습 목표
 >
-> *   라즈베리 파이 운영체제 관리자 : NOOBS
+> *   컴퓨터 서버가 네트워크에 있는 다른 컴퓨터에 데이터를 전송할 수 있다는 것을 알게 된다.
+> *   네트워크로 전송된 데이터가 (컴퓨터) 화면에 메시지를 출력하는 것 이상으로 클라이언트 컴퓨터에 무언가를 일으킬 수 있다는 것을 알게 된다.
 
-## NOOBS
+2020년 까지 인터넷에 소에서 냉장고 자동차까지 [50조개 사물](https://www.cisco.com/web/about/ac79/docs/innov/IoT_IBSG_0411FINAL.pdf)이 연결될 것으로 예측된다.
+이것이 사물 인터넷(Internet of Things)로 알려져 있다.
+이번 학습단원에서 학생들이 가장 간단한 사물- 네트워크를 타고 LED 전구를 켜는 버튼 -을 만든다.
 
-**NOOBS(New Out Of the Box Software)** - 라즈베리 파이를 위한 쉬운 운영체제 설치 관리자다.
+이전 학습단원에서 네트워크가 중요하며 광범위하게 퍼져있다는 것을 인지했다.
+IP 주소, 서버, 클라이언트 같은 용어에 불편함이 없어야 한다. 
+이전 단원의 용어정의를 재충전 기회로 사용할 수도 있다. 
 
-![NOOBS](fig/noobs.png)
+## 학습 결과
 
-## NOOBS 얻는 방법
+### 모든 학생이 수행할 수 있는 것
 
-### 사전 설치된 SD 카드를 구매
+- 네트워크에 있는 컴퓨터는 서로에게 데이터를 전송할 수 있고, 그 데이터가 수신한 컴퓨터에게 무언가를 수행하게도 할 수 있다.  
+- 간단한 프로그램을 사용해서 네트워크로 하드웨어를 제어한다.
 
-NOOBS를 습득하는 가장 쉬운 방법은 NOOBS가 사전 설치된 SD 카드를 구매하는 것이다: [swag 상점](http://swag.raspberrypi.org/collections/frontpage/products/noobs-8gb-sd-card)에서 4 파운드에 구입가능하다.
+### 학생 대부분이 수행할 수 있는 것
 
-### 다운로드
+- 프로그램을 작성(hacking)해서 유용하게 다른 것을 만들 수 있다.  
 
-대안으로 라즈베리 파이 웹사이트에서 무료로 NOOBS를 다운로드할 수 있다:  
+### 학생 일부가 수행할 수 있는 것
 
-[http://www.raspberrypi.org/downloads](http://www.raspberrypi.org/downloads)
+- 프로그램을 개작해서 라즈베리 파이가 또다른 라즈베리 파이 하드웨어를 특정한 방식으로 동작하도록 만든다.
 
-### SD 카드에 NOOBS 설치하는 방법
+## 학습 정리
 
-NOOBS 압축 파일을 다운로드하면, 사용자 컴퓨터에 있는 포맷된 SD 카드에 다운로드 받은 것을 복사한다. 
+- 피지컬, 네트워크 컴퓨팅에 대한 소개  
+- 이전 학습 내용을 확장해서 화면에 메시지를 주고받는 것 대신에 클라이언트 컴퓨터에 붙어있는 하드웨어를 제어한다.  
+- 네트워크로 또다른 라즈베리 파이 GPIO 핀을 제어한다.
 
-빈 SD카드에 NOOBS을 설치하는 방법은 다음과 같다:
+## 시작
 
-- 4GB 이상 되는 SD카드를 FAT 방식으로 포맷한다. 자세한 방법은 아래를 참조한다.  
-- 다운로드한 NOOPS 압축파일을 푼다.
-- 방금 포맷한 SD 카드에 압축을 푼 파일을 복사한다. 복사한 파일은 SD 카드 루트 디렉토리에 위치시킨다. 몇몇 경우에 압축을 풀 파일을 폴더에 복사하거나 폴더에 압축을 풀기도 한다; 만약 이런 경우라면 폴더 자체보다 폴더 내부에서 파일을 복사해서 루트로 이동시킨다.
-- 첫번째 부팅에서 "RECOVERY" FTA 파티션이 자동으로 최소 화면으로 조정하고 설치 가능한 OS 목록이 화면에 표시된다.  
+종이나 인터랙트브 화이트보드에 끌어다 놓기(drag and drop) 방식으로 수행할 수 있다.
 
-#### FAT 형식으로 SD 카드를 포맷하는 방법
+- 1분 내에 학생들이 올바른 순서로 [코드 리뷰]()에 있는 파이썬 코드를 재정렬한다.  
+- 프로그램이 실행되는 것을 보여준다. 무엇이 어디서 왜 동작하는 토론한다; 예, 모듈 가져오기(import module), 함수, while 루프 등.  
+- PA 주관 [라즈베리 파이 경진대회](https://www.youtube.com/watch?v=x_-ngDlclw0) 동영상을 시청하고,
+모든 프로젝트가 라즈베리 파이 물리적인 측면을 제어하는 서버에 의존한다는 것을 설명한다. (예, 센서, 화면, 펌프, 카메라 등)
 
-**주의:** 32 GB 이상(즉, 64GB 혹은 그 이상) 저장 용량을 갖는 SD 카드를 포맷한다면, 별도 [SDXC 포맷](https://www.raspberrypi.org/documentation/installation/sdxc_formatting.md) 지침을 참조한다.
+## 주요 학습 내용
 
-#### 윈도우
+1. 첫번째 학습과목과 유사하게 라즈베리 파이 두대를 연결한다. 하지만, 이번에는 텍스트를 전송하는 대신에 하드웨어를 제어한다.  
+2. 네트워크를 설정하고 [안내 참고서]()에 맞춰서 또 다른 라즈베리 파이에 있는 LED를 제어한다.  
+3. 아이디어 확장(즉, **코딩시작**): 피드백을 화면에 메시지로 추가, LED 점멸 방식을 제어, 물리적 버튼 변경(예, 알루미늄 호일로 만든 "압력 패드"), 또다른 LED 추가 (고급과정)  
+4. **여기 추가**
 
-윈도우 사용자에 대해서 SD 연합회(SD Association) 포맷 도구를 사용해서 SD 카드를 포맷하는 것을 추천한다. 포맷 도구는 [sdcard.org](https://www.sdcard.org/downloads/formatter_4/)에서 다운받을 수 있다.옵션(`Options`)메뉴에서 "FORMAT SIZE ADJUSTMENT" 옵션을 "ON"으로 설정해서 단일 파티션만 포맷하는 것이 아니라 전체 SD 카드 볼륨이 포맷되게 한다.
+## 총회
 
-#### 맥 OS
+각 그룹이 일어나서 프로그램에 무슨 변경을 수행했고, 어떻게 변경했는지 설명한다.
+만약 빔프로젝터나 TV 화면이 있다면 코드를 화면에 출력한다. 로직과 소프트웨어 코드 구문을 설명하게 한다.
 
-OSX 디스크 유틸리티가 전체 디스크를 포맷할 수 있지만, 
-[SD 연합회 포맷 도구](https://www.sdcard.org/downloads/formatter_4/)도 맥사용자에게 사용가능한다. 포맷을 하기 위해서, SD 카드 볼륨을 고르고 나서, `MS-DOS` 포맷을 갖는 `Erase`를 선택한다.
+## 숙제
 
-#### 리눅스
+1. 학생들에게 [50조개 사물](https://www.cisco.com/web/about/ac79/docs/innov/IoT_IBSG_0411FINAL.pdf)이 나온 원문을 출처를 알려준다.  
+2. 다음 학습을 준비로 사전 연구를 하고, IoT가 좋은 것인지 혹은 나쁜 것인지에 대해 1분 발표를 준비시킨다.
+만약 슬라이드를 사용한다면, 글 없이 오직 그림만 가능한다.  
+3. 다음 수업에서 무작위로 학생 몇명을 일으켜 세워 각자의 주장에 동일한 시간을 주어 짧게 발표를 하게 한다. 
+학급 전원이 누가 가장 잘했는지 선정한다.
 
-리눅스 사용자에게는 `gparted`를 추천한다. (혹은, 명령-라인 버젼인 parted) Norman Dunbar가 리눅스 사용자를 위한 [포맷방법](http://qdosmsq.dunbar-it.co.uk/blog/2013/06/noobs-for-raspberry-pi/)을 자세히 작성했다.
 
-### NOOBS 내부에는 무엇이 있을까?
 
-NOOBS에는 다음 운영체제가 내장되어 있다.
-
-- [Raspbian](http://raspbian.org/)
-- [Pidora](http://pidora.ca/)
-- [OpenELEC](http://wiki.openelec.tv/index.php?title=Raspberry_Pi_FAQ)
-- [OSMC](http://osmc.tv/)
-- [RISC OS](https://www.riscosopen.org/wiki/documentation/show/Welcome%20to%20RISC%20OS%20Pi)
-- [Arch Linux](http://archlinuxarm.org/platforms/armv6/raspberry-pi)
-
-NOOBS v1.3.10(2014년 9월) 버젼에는 라즈비언만 디폴트로 설치되어 있다. 다른 운영체제는 네트워크 연결을 통해서 설치될 수 있다.
-
-### NOOBS 와 NOOBS Lite
-
-NOOBS는 두가지 형태로 이용가능하다: 오프라인과 네트워크 설치; 혹은 네트워크 설치 전용.
-
-전체 버젼에는 라즈비언이 포함되어 있어서 오프라인 상태에서 SD 카드로 설치될 수 있다. 반면에 NOOBS Lite를 사용하거나 다른 운영체제를 설치하려면 설치 중에 인터넷 연결이 요구된다.
-
-만약 새로운 버젼의 운영체제가 출시되면 전체 버젼 운영체제는 구식이 될 수 있다. 하지만, 만약 인터넷에 연결이 되고, 만약 최신 운영체제가 이용가능하다면 가장 최신 버전 운영체제 다운로드 옵션이 나타날 것이다.
-
-### NOOBS 개발
-
-#### 최신 NOOBS 출시
-
-가장 최신 NOOBS 버젼은 **2015년 2월 18일** 출시된 **v1.4.0**이다.
-
-(NOOBS v1.4.0 이후로, NOOBS Lite는 단지 버젼 숫자 첫 두 자리만 공유한다. 즉, v1.4)
-
-#### NOOBS 문서
-
-NOOBS 고급 환경설정을 포함한 전체 문서는 [GitHub](https://github.com/raspberrypi/noobs/blob/master/README.md)에서 이용가능한다.
-
-#### NOOBS 소스 코드
-
-NOOBS 소스 코드도 [GitHub](https://github.com/raspberrypi/noobs)에서 볼 수 있다.
 
